@@ -1,4 +1,4 @@
-baseURL = 'http://AndreaDipa.github.io/'
+baseURL = 'https://AndreaDipa.github.io/'
 languageCode = 'en-us'
 title = "Andrea's Statistics Blog"
 theme = "risotto"
