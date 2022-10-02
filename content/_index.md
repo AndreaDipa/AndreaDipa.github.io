@@ -17,3 +17,5 @@ Assignment:
     <li> What is a dataset? From the observation units to the dataset. Attributes and variables, </li>
     <li> Find and list interesting applications of statistics to cybersecurity problems. </li>
 </ul>
+
+![Image alt](post/homework_1/images/statistics-analytics-index.jpg)
