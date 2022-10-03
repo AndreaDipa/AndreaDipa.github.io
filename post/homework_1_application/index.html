@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head><title>Homework 1, application &ndash; Andrea&#39;s Statistics Blog</title>
+<meta name="description" content="Andrea Di Paolo&#39;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023. ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/risotto.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/custom.css">
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><h1 class="page__logo"><a href="https://AndreaDipa.github.io/" class="page__logo-inner">Andrea&#39;s Statistics Blog</a></h1>
+<nav class="page__nav main-nav">
+    <ul>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://AndreaDipa.github.io/about/" title="">About</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="https://AndreaDipa.github.io/post/" title="Posts">Posts</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Homework 1, application</h1>
+    </header>
+    <div class="content__body">
+        <p>Assignment:</p>
+<ul>
+<li> Create simple applications in C# and VBNet to play with event handlers, understanding the syntax differences between the two languages.</li>
+</ul>
+<p><mark>C#</mark></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.ComponentModel;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Data;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Drawing;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Linq;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Text;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Threading.Tasks;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Windows.Forms;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Windows.Forms.DataVisualization.Charting;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> MyVeryFirstCSharpProgram
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form1</span> : Form
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> Form1()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            InitializeComponent();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Form1_Load(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points.AddXY(<span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">0</span>].Color = Color.Red;
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points.AddXY(<span style="color:#e6db74">&#34;2&#34;</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">1</span>].Color = Color.Blue;
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points.AddXY(<span style="color:#e6db74">&#34;3&#34;</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">2</span>].Color = Color.Green;
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points.AddXY(<span style="color:#e6db74">&#34;4&#34;</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">3</span>].Color = Color.Purple;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button1_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            richTextBox1.Text = <span style="color:#e6db74">&#34;Hello World!&#34;</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button1_MouseEnter(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            richTextBox1.Text = <span style="color:#e6db74">&#34;The mouse entered button1!&#34;</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button1_MouseLeave(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            richTextBox1.Text = <span style="color:#e6db74">&#34;The mouse left button1!&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button2_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (progressBar1.Value &lt; <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                progressBar1.Value += <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (progressBar1.Value == <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>                    button3.Enabled = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (progressBar1.Value == <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>                    button2.Enabled = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button3_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (progressBar1.Value &gt; <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                progressBar1.Value -= <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (progressBar1.Value == <span style="color:#ae81ff">90</span>)
+</span></span><span style="display:flex;"><span>                    button2.Enabled = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (progressBar1.Value == <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>                    button3.Enabled = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button4_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">0</span>].YValues[<span style="color:#ae81ff">0</span>] += <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            chart1.ChartAreas[<span style="color:#ae81ff">0</span>].RecalculateAxesScale();
+</span></span><span style="display:flex;"><span>            chart1.Refresh();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button5_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">0</span>].YValues[<span style="color:#ae81ff">0</span>] -= <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            chart1.ChartAreas[<span style="color:#ae81ff">0</span>].RecalculateAxesScale();
+</span></span><span style="display:flex;"><span>            chart1.Refresh();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button6_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">1</span>].YValues[<span style="color:#ae81ff">0</span>] += <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            chart1.ChartAreas[<span style="color:#ae81ff">0</span>].RecalculateAxesScale();
+</span></span><span style="display:flex;"><span>            chart1.Refresh();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button7_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">1</span>].YValues[<span style="color:#ae81ff">0</span>] -= <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            chart1.ChartAreas[<span style="color:#ae81ff">0</span>].RecalculateAxesScale();
+</span></span><span style="display:flex;"><span>            chart1.Refresh();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button8_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">2</span>].YValues[<span style="color:#ae81ff">0</span>] += <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            chart1.ChartAreas[<span style="color:#ae81ff">0</span>].RecalculateAxesScale();
+</span></span><span style="display:flex;"><span>            chart1.Refresh();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button9_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">2</span>].YValues[<span style="color:#ae81ff">0</span>] -= <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            chart1.ChartAreas[<span style="color:#ae81ff">0</span>].RecalculateAxesScale();
+</span></span><span style="display:flex;"><span>            chart1.Refresh();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button10_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">3</span>].YValues[<span style="color:#ae81ff">0</span>] -= <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            chart1.ChartAreas[<span style="color:#ae81ff">0</span>].RecalculateAxesScale();
+</span></span><span style="display:flex;"><span>            chart1.Refresh();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button11_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            chart1.Series[<span style="color:#e6db74">&#34;Data&#34;</span>].Points[<span style="color:#ae81ff">3</span>].YValues[<span style="color:#ae81ff">0</span>] += <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            chart1.ChartAreas[<span style="color:#ae81ff">0</span>].RecalculateAxesScale();
+</span></span><span style="display:flex;"><span>            chart1.Refresh();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><mark>VBNet</mark></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vbnet" data-lang="vbnet"><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button1_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button1.Click
+</span></span><span style="display:flex;"><span>        RichTextBox1.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button2_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button2.Click
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">If</span> ProgressBar1.Value <span style="color:#f92672">&lt;</span> 100 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>        ProgressBar1.Value <span style="color:#f92672">+=</span> 10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> ProgressBar1.Value <span style="color:#f92672">=</span> 10 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            Button3.Enabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">ElseIf</span> ProgressBar1.Value <span style="color:#f92672">=</span> 100 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            Button2.Enabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button3_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button3.Click
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">If</span> ProgressBar1.Value <span style="color:#f92672">&gt;</span> 0 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>        ProgressBar1.Value <span style="color:#f92672">-=</span> 10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> ProgressBar1.Value <span style="color:#f92672">=</span> 90 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            Button2.Enabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">ElseIf</span> ProgressBar1.Value <span style="color:#f92672">=</span> 0 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            Button3.Enabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button4_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button4.Click
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(0).YValues(0) <span style="color:#f92672">+=</span> 1
+</span></span><span style="display:flex;"><span>    Chart1.ChartAreas(0).RecalculateAxesScale()
+</span></span><span style="display:flex;"><span>    Chart1.Refresh()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button5_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button5.Click
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(0).YValues(0) <span style="color:#f92672">-=</span> 1
+</span></span><span style="display:flex;"><span>    Chart1.ChartAreas(0).RecalculateAxesScale()
+</span></span><span style="display:flex;"><span>    Chart1.Refresh()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button6_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button6.Click
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(1).YValues(0) <span style="color:#f92672">+=</span> 1
+</span></span><span style="display:flex;"><span>    Chart1.ChartAreas(0).RecalculateAxesScale()
+</span></span><span style="display:flex;"><span>    Chart1.Refresh()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button7_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button7.Click
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(1).YValues(0) <span style="color:#f92672">-=</span> 1
+</span></span><span style="display:flex;"><span>    Chart1.ChartAreas(0).RecalculateAxesScale()
+</span></span><span style="display:flex;"><span>    Chart1.Refresh()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button8_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button8.Click
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(2).YValues(0) <span style="color:#f92672">+=</span> 1
+</span></span><span style="display:flex;"><span>    Chart1.ChartAreas(0).RecalculateAxesScale()
+</span></span><span style="display:flex;"><span>    Chart1.Refresh()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button9_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button9.Click
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(2).YValues(0) <span style="color:#f92672">-=</span> 1
+</span></span><span style="display:flex;"><span>    Chart1.ChartAreas(0).RecalculateAxesScale()
+</span></span><span style="display:flex;"><span>    Chart1.Refresh()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button10_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button10.Click
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(3).YValues(0) <span style="color:#f92672">+=</span> 1
+</span></span><span style="display:flex;"><span>    Chart1.ChartAreas(0).RecalculateAxesScale()
+</span></span><span style="display:flex;"><span>    Chart1.Refresh()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button11_Click</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button11.Click
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(3).YValues(0) <span style="color:#f92672">-=</span> 1
+</span></span><span style="display:flex;"><span>    Chart1.ChartAreas(0).RecalculateAxesScale()
+</span></span><span style="display:flex;"><span>    Chart1.Refresh()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button1_MouseEnter</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button1.MouseEnter
+</span></span><span style="display:flex;"><span>    RichTextBox1.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The mouse entered button1!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Button1_MouseLeave</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> Button1.MouseLeave
+</span></span><span style="display:flex;"><span>    RichTextBox1.Text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The mouse left button1!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Friend</span> <span style="color:#66d9ef">WithEvents</span> Label1 <span style="color:#f92672">As</span> Label
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Friend</span> <span style="color:#66d9ef">WithEvents</span> Label2 <span style="color:#f92672">As</span> Label
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Friend</span> <span style="color:#66d9ef">WithEvents</span> Label3 <span style="color:#f92672">As</span> Label
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Friend</span> <span style="color:#66d9ef">WithEvents</span> Label4 <span style="color:#f92672">As</span> Label
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Private</span> <span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">Form1_Load</span>(sender <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, e <span style="color:#f92672">As</span> EventArgs) <span style="color:#66d9ef">Handles</span> <span style="color:#66d9ef">MyBase</span>.Load
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points.AddXY(<span style="color:#e6db74">&#34;1&#34;</span>, 0)
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(0).Color <span style="color:#f92672">=</span> Color.Red
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points.AddXY(<span style="color:#e6db74">&#34;2&#34;</span>, 0)
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(1).Color <span style="color:#f92672">=</span> Color.Blue
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points.AddXY(<span style="color:#e6db74">&#34;3&#34;</span>, 0)
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(2).Color <span style="color:#f92672">=</span> Color.Green
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points.AddXY(<span style="color:#e6db74">&#34;4&#34;</span>, 0)
+</span></span><span style="display:flex;"><span>    Chart1.Series(<span style="color:#e6db74">&#34;Data&#34;</span>).Points(3).Color <span style="color:#f92672">=</span> Color.Purple
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span></code></pre></div>
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    <img class="about__logo" src="https://AndreaDipa.github.io/images/rice.svg" alt="Logo">
+<h1 class="about__title">Andrea&#39;s Blog</h1>
+<p class="about__description">Andrea Di Paolo&rsquo;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023.</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/AndreaDipa" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:andreadipaa@gmail.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            By Andrea Di Paolo, 
+            2022-10-03
+        </p>
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright"></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
