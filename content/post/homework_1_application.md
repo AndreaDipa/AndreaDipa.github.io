@@ -10,7 +10,7 @@ Assignment:
 <li> Create simple applications in C# and VBNet to play with event handlers, understanding the syntax differences between the two languages.</li>
 </ul>
 <!--more-->
-
+To practise with C# and VBNet, in particular with event handlers, I created a simple application divided into three sections. In the first part I simply make some text appear after pressing a button, in the second part I increment and decrement a progressBar again using buttons. Finally, by means of other buttons, I increment data within a histogram. <br/>
 <mark>C#</mark>
 ```cs
 using System;
