@@ -1,7 +1,7 @@
 +++
 title = "Homework 1, research"
-date = 2022-10-01T18:02:27+02:00
-draft = true
+date = 2022-10-03T18:34:16+02:00
+draft = false
 author = "Andrea Di Paolo"
 +++
 Assignment: 
@@ -12,6 +12,9 @@ Assignment:
 </ul>
 
 <!--more-->
+
+
+
 
 ## <mark>Definiton of statistics </mark>
 <br/>
