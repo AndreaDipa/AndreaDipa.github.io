@@ -55,7 +55,7 @@ No matter which methods you use, Seiersen and Hubbard maintain that using statis
 
 # References 
 
-[1] toppr.com, “Statistics in Maths: Definition, Types, Chart and Examples”, 2021, [URL](https://www.toppr.com/guides/maths/statistics/statistics-in-maths/). <br/>
-[2] techtarget.com, "Definition of dataset", 2016, [URL](https://www.techtarget.com/whatis/definition/data-set)</br>
-[3] differencebetween.net, "Difference Between Variable and Attribute", 2021, [URL](http://www.differencebetween.net/technology/difference-between-variable-and-attribute/)<br/>
-[4] reciprocity.com, "The Statistical Analysis of Measuring Cybersecurity Risk", 2022, [URL](https://reciprocity.com/blog/the-statistical-analysis-of-measuring-cybersecurity-risk/)
+[1] toppr.com, “Statistics in Maths: Definition, Types, Chart and Examples”, 2021, [URL](https://www.toppr.com/guides/maths/statistics/statistics-in-maths/), <br/>
+[2] techtarget.com, "Definition of dataset", 2016, [URL](https://www.techtarget.com/whatis/definition/data-set),</br>
+[3] differencebetween.net, "Difference Between Variable and Attribute", 2021, [URL](http://www.differencebetween.net/technology/difference-between-variable-and-attribute/),<br/>
+[4] reciprocity.com, "The Statistical Analysis of Measuring Cybersecurity Risk", 2022, [URL](https://reciprocity.com/blog/the-statistical-analysis-of-measuring-cybersecurity-risk/).

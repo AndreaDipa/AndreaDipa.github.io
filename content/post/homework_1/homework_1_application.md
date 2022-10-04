@@ -14,7 +14,7 @@ To practise with C# and VBNet, in particular with event handlers, I created a si
 
 {{< youtube QN1aJSn3MRc >}}
 
-<mark>C#</mark>
+## <mark>C#</mark>
 ```cs
 using System;
 using System.Collections.Generic;
@@ -136,8 +136,10 @@ namespace MyVeryFirstCSharpProgram
         }
     }
 }
+
+
 ```
-<mark>VBNet</mark>
+## <mark>VBNet</mark>
 ```vbnet
 Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         RichTextBox1.Text = "Hello World!"
