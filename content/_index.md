@@ -7,7 +7,6 @@ author = "Andrea Di Paolo"
 +++
 
 # Last activities
-
 ## [Homework 1, research](https://AndreaDipa.github.io/post/homework_1/homework_1_research/) 
 
 Andrea Di Paolo, 1 October 2022

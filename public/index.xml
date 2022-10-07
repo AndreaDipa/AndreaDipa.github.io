@@ -8,6 +8,44 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Oct 2022 18:02:27 +0200</lastBuildDate><atom:link href="https://AndreaDipa.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Homework 2, research on application</title>
+      <link>https://AndreaDipa.github.io/post/homework_2/homework_2_ra/</link>
+      <pubDate>Fri, 07 Oct 2022 08:04:36 +0200</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_2/homework_2_ra/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt; CSV protocol RFC 4180 (definition and rules) &lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Homework 2, application</title>
+      <link>https://AndreaDipa.github.io/post/homework_2/homework_2_application/</link>
+      <pubDate>Fri, 07 Oct 2022 08:04:32 +0200</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_2/homework_2_application/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt; make a simple program which uses the objects RANDOM and TIMER &lt;/li&gt;
+    &lt;li&gt; Make a simple CSV parser &lt;/li&gt;
+    &lt;li&gt; Compute an univariate distribution of a variable &lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Homework 2, research</title>
+      <link>https://AndreaDipa.github.io/post/homework_2/homework_2_research/</link>
+      <pubDate>Fri, 07 Oct 2022 08:04:26 +0200</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_2/homework_2_research/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt; Concept of distribution. Univariate and multivariate. Conditional and marginal distributions.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Homework 1, application</title>
       <link>https://AndreaDipa.github.io/post/homework_1/homework_1_application/</link>
       <pubDate>Mon, 03 Oct 2022 18:34:16 +0200</pubDate>
