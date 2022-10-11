@@ -24,5 +24,5 @@ CSV is a simple format for representing a rectangular array (matrix) of numeric 
 </ul>
 
 # References 
-[1] loc.gov, "CSV, Comma Separated Values (RFC 4180)", 2021, [URL](https://www.loc.gov/preservation/digital/formats/fdd/fdd000323.shtml),
+[1] loc.gov, "CSV, Comma Separated Values (RFC 4180)", 2021, [URL](https://www.loc.gov/preservation/digital/formats/fdd/fdd000323.shtml), <br>
 [2] thoughtspot.com, "6 Rules for Creating Valid CSV Files", 2015, [URL](https://www.thoughtspot.com/blog/6-rules-creating-valid-csv-files).
