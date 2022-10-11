@@ -44,10 +44,169 @@
     <div class="content__body">
         <p>Assignment:</p>
 <ul>
-    <li> make a simple program which uses the objects RANDOM and TIMER </li>
+    <li> make a simple program which uses the objects Random and Timer </li>
     <li> Make a simple CSV parser </li>
-    <li> Compute an univariate distribution of a variable </li>
+    <li> Compute an univariate distribution of a variable</li>
 </ul>
+<h1 id="mark-objects-random-and-timer-mark"><mark> Objects Random and Timer </mark></h1>
+<p>In order to get to grips with the two objects, I created a simple application to start the timer, so that I could randomly change the value of the progressbar, the background colour of the richtextbox and generate random passwords.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Text;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Windows.Forms.VisualStyles;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> RandomExample
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form1</span> : Form
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Random r = <span style="color:#66d9ef">new</span> Random();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> sum = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> count = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span>[] C  = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> Form1()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            InitializeComponent();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button1_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            timer1.Start();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> timer1_Tick(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">double</span> rand = r.Next(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>); 
+</span></span><span style="display:flex;"><span>            progressBar1.Value = (Int32)rand;
+</span></span><span style="display:flex;"><span>            richTextBox1.BackColor = Color.FromArgb(r.Next(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">256</span>), r.Next(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">256</span>), r.Next(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">256</span>));
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> valid = <span style="color:#e6db74">&#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&#34;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> length = <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>            StringBuilder res = <span style="color:#66d9ef">new</span> StringBuilder();
+</span></span><span style="display:flex;"><span>            Random rnd = <span style="color:#66d9ef">new</span> Random();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">0</span> &lt; length--)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                res.Append(valid[rnd.Next(valid.Length)]);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            richTextBox2.Text = res.ToString();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button2_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            timer1.Stop();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> richTextBox1_TextChanged(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="mark-csv-parser-and-univariate-distributionmark"><mark> CSV Parser and univariate distribution</mark></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Microsoft.VisualBasic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Microsoft.VisualBasic.FileIO;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Formats.Asn1;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Windows.Forms;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> CSVParser
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form1</span> : Form
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> filePath = <span style="color:#66d9ef">string</span>.Empty;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> fileContent = <span style="color:#66d9ef">string</span>.Empty;
+</span></span><span style="display:flex;"><span>        Stream fileStream;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> Form1()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            InitializeComponent();
+</span></span><span style="display:flex;"><span>           
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button1_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (openFileDialog1.ShowDialog() == DialogResult.OK)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                filePath = openFileDialog1.FileName;
+</span></span><span style="display:flex;"><span>                fileStream = openFileDialog1.OpenFile();
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">using</span> (StreamReader reader = <span style="color:#66d9ef">new</span> StreamReader(fileStream))
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    fileContent = reader.ReadToEnd();
+</span></span><span style="display:flex;"><span>                    richTextBox1.Text = fileContent;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> lines = File.ReadAllLines(filePath);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> rows = lines.Count();
+</span></span><span style="display:flex;"><span>            numericUpDown1.Maximum = rows;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> openFileDialog1_FileOk(<span style="color:#66d9ef">object</span> sender, System.ComponentModel.CancelEventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button2_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            dataGridView1.Rows.Clear();
+</span></span><span style="display:flex;"><span>            dataGridView1.Refresh();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> headerLine <span style="color:#66d9ef">in</span> File.ReadLines(filePath).Take(<span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> headerItem <span style="color:#66d9ef">in</span> headerLine.Split(<span style="color:#66d9ef">new</span>[] { <span style="color:#e6db74">&#39;,&#39;</span> }, StringSplitOptions.RemoveEmptyEntries))
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">var</span> column = <span style="color:#66d9ef">new</span> DataGridViewTextBoxColumn();
+</span></span><span style="display:flex;"><span>                    column.Name = headerItem;
+</span></span><span style="display:flex;"><span>                    column.HeaderText = headerItem;
+</span></span><span style="display:flex;"><span>                    dataGridView1.Columns.Add(column);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> i = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> line <span style="color:#66d9ef">in</span> File.ReadLines(filePath).Skip(<span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">if</span> (i &lt; numericUpDown1.Value)
+</span></span><span style="display:flex;"><span>                    dataGridView1.Rows.Add(line.Split(<span style="color:#e6db74">&#39;,&#39;</span>));
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>                i++;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> dataGridView1_ColumnHeaderMouseDoubleClick_1(<span style="color:#66d9ef">object</span> sender, DataGridViewCellMouseEventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            richTextBox1.Clear();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span>[] countries = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">string</span>[((<span style="color:#66d9ef">int</span>)numericUpDown1.Value)];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> x = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (DataGridViewRow item <span style="color:#66d9ef">in</span> dataGridView1.Rows)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> ciao = item.Cells[dataGridView1.Columns[e.ColumnIndex].HeaderText].Value;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (ciao <span style="color:#66d9ef">is</span> not <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>                    countries[x] = ciao.ToString();
+</span></span><span style="display:flex;"><span>                x++;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            Dictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt; times = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt;();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> country <span style="color:#66d9ef">in</span> countries)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (!times.ContainsKey(country))
+</span></span><span style="display:flex;"><span>                    times[country] = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                    times[country]++;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (KeyValuePair&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt; kvp <span style="color:#66d9ef">in</span> times)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                richTextBox1.AppendText(kvp.Key.ToString() + <span style="color:#e6db74">&#34; &#34;</span> + kvp.Value.ToString() + <span style="color:#e6db74">&#34;\n&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
     </div>
     <footer class="content__footer"></footer>
 
