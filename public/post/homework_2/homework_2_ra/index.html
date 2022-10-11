@@ -46,6 +46,20 @@
 <ul>
     <li> CSV protocol RFC 4180 (definition and rules) </li>
 </ul>
+<h1 id="mark-definiton-mark"><mark> Definiton </mark></h1>
+<p>CSV is a simple format for representing a rectangular array (matrix) of numeric and textual values. It an example of a &ldquo;flat file&rdquo; format. It is a delimited data format that has fields/columns separated by the comma character %x2C (Hex 2C) and records/rows/lines separated by characters indicating a line break. RFC 4180 stipulates the use of CRLF pairs to denote line breaks, where CR is %x0D (Hex 0D) and LF is %x0A (Hex 0A). Each line should contain the same number of fields. Fields that contain a special character (comma, CR, LF, or double quote), must be &ldquo;escaped&rdquo; by enclosing them in double quotes (Hex 22). An optional header line may appear as the first line of the file with the same format as normal record lines. This header will contain names corresponding to the fields in the file and should contain the same number of fields as the records in the rest of the file. CSV commonly employs US-ASCII as character set, but other character sets are permitted.</p>
+<h1 id="mark-rules-mark"><mark> Rules <mark></h1>
+<ul>
+    <li> Separate data fields with a delimiter, usually a comma, </li>
+    <li> keep each record on a separate line, </li>
+    <li> do not follow the last record in a file with a carriage return, </li>
+    <li> in the first line of the file, include a header with a list of the column names in the file, </li>
+    <li> make sure the header list is delimited in the same way as the rest of the file, </li>
+    <li> remember that the enclosing character (typically double quotes) must be used when required. </li>
+</ul>
+<h1 id="references">References</h1>
+<p>[1] loc.gov, &ldquo;CSV, Comma Separated Values (RFC 4180)&rdquo;, 2021, <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000323.shtml">URL</a>,
+[2] thoughtspot.com, &ldquo;6 Rules for Creating Valid CSV Files&rdquo;, 2015, <a href="https://www.thoughtspot.com/blog/6-rules-creating-valid-csv-files">URL</a>.</p>
     </div>
     <footer class="content__footer"></footer>
 
