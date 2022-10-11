@@ -27,9 +27,9 @@
       <guid>https://AndreaDipa.github.io/post/homework_2/homework_2_application/</guid>
       <description>&lt;p&gt;Assignment:&lt;/p&gt;
 &lt;ul&gt;
-    &lt;li&gt; make a simple program which uses the objects RANDOM and TIMER &lt;/li&gt;
+    &lt;li&gt; make a simple program which uses the objects Random and Timer &lt;/li&gt;
     &lt;li&gt; Make a simple CSV parser &lt;/li&gt;
-    &lt;li&gt; Compute an univariate distribution of a variable &lt;/li&gt;
+    &lt;li&gt; Compute an univariate distribution of a variable&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
