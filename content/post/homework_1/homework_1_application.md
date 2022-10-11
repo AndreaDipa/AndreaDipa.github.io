@@ -241,6 +241,6 @@ Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     Chart1.Series("Data").Points(3).Color = Color.Purple
 End Sub
 ```
-
+[Github Repository](https://github.com/AndreaDipa/Statistics-homeworks)
 
 

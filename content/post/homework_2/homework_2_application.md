@@ -16,6 +16,8 @@ Assignment:
 
 In order to get to grips with the two objects, I created a simple application to start the timer, so that I could randomly change the value of the progressbar, the background colour of the richtextbox and generate random passwords.
 
+{{< youtube KLJEel8vM_M >}}
+
 ```cs
 using System.Text;
 using System.Windows.Forms.VisualStyles;
@@ -68,7 +70,9 @@ namespace RandomExample
 }
 ```
 # <mark> CSV Parser and univariate distribution</mark>
-
+For the second task, I used a button to open a csv file, read it and display it in a richTextBox, and another button to parse it and display its contents in a dataGridView. By pressing one of the table headers, it is possible to obtain the univariate distribution concerning the selected attribute.
+{{< youtube YXNiS8f66w4 >}}
+For this video, I used a dataset found in this [github repository](https://github.com/shramos/Awesome-Cybersecurity-Datasets) that I found very useful if you want to analyse cybersecurity ineerent data. In particular the file I chose is data recovered from various intrusions into AWS (Amazon Web Service) honeypots from this [site](https://datadrivensecurity.info/blog/pages/dds-dataset-collection.html).
 ```cs
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.FileIO;
