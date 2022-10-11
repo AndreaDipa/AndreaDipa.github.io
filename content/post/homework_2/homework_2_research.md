@@ -39,10 +39,15 @@ A multivariate distribution refers to the probability distribution of a group of
 
 # <mark> Conditional distribution </mark>
 If X and Y are two jointly distributed random variables, then the conditional distribution of Y given X is the probability distribution of Y when X is known to be a certain value.
+
+# <mark> Marginal distribution </mark>
+A marginal distribution is a distribution of values for one variable that ignores a more extensive set of related variables in a dataset.
+The idea is that when you have a larger set of related variables that you collected for a study, you might want to focus on one of them to answer a specific question.
 # References
 
 [1] machinelearningmastery.com, “A Gentle Introduction to Statistical Data Distributions
 ”, 2018, [URL](https://machinelearningmastery.com/statistical-data-distributions/), <br>
 [2] analystprep.com, "Univariate vs. Multivariate Distributions and the Role of Correlation in the Multivariate Normal Distribution", 2019, [URL](https://analystprep.com/cfa-level-1-exam/quantitative-methods/univariate-vs-multivariate-distribution/), <br>
 [3] financetrain.com, "Univariate Vs. Multivariate Distribution", [URL](https://financetrain.com/univariate-vs-multivariate-distribution), <br>
-[4] statology.org, "What is a Conditional Distribution in Statistics?", 2021, [URL](https://www.statology.org/conditional-distribution/),
+[4] statology.org, "What is a Conditional Distribution in Statistics?", 2021, [URL](https://www.statology.org/conditional-distribution/), <br>
+[5] statisticsbyjim.com, "Marginal Distribution: Definition & Finding", 2022, [URL](https://statisticsbyjim.com/basics/marginal-distribution/).
