@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head><title>Homework 3, research &ndash; Andrea&#39;s Statistics Blog</title>
+<meta name="description" content="Andrea Di Paolo&#39;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023. ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/risotto.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/custom.css">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><h1 class="page__logo"><a href="https://AndreaDipa.github.io/" class="page__logo-inner">Andrea&#39;s Statistics Blog</a></h1>
+<nav class="page__nav main-nav">
+    <ul>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://AndreaDipa.github.io/about/" title="">About</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="https://AndreaDipa.github.io/post/" title="Homeworks">Homeworks</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Homework 3, research</h1>
+    </header>
+    <div class="content__body">
+        <p>Assignment:</p>
+<ul>
+    <li> Illustrate the concept of conditional, joint, marginal (relative) frequency using a simple bivariate distribution, </li>
+    <li> illustrate the concept of statistical independence and the resulting mathematical relationships between the above frequencies.</li>
+</ul>
+<p>In this post we will talk about what are marginal, joint and conditional frequency. We will also explain the concept of statistical independence and why, in case of independence, the relative joint frequencies are equal to the products of the corresponding marginal frequencies.</p>
+<h1 id="mark-joint-relative-frequency-mark"><mark> Joint (relative) frequency </mark></h1>
+<p>A <strong>joint frequency</strong> is how many times a combination of two conditions happens together.
+Bivariate joint frequencies are displayed in the center of a frequency distribution table.</p>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th> Cats </th>
+            <th> Fish </th>
+            <th> Dogs </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> Man </td>
+            <td> 2 </td>
+            <td> 4 </td>
+            <td> 6 </td>
+            <td> 12 </td>
+        </tr>
+        <tr>
+            <td>Woman</td>
+            <td> 5 </td>
+            <td> 3 </td>
+            <td> 2 </td>
+            <td> 10 </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 7 </td>
+            <td> 7 </td>
+            <td> 8 </td>
+            <td> 22 </td>
+        </tr>
+    </tbody>
+</table>
+<p>For example, the table above shows how many people (women and men) own which pets. The value at the “joint” of women cats is 5. Therefore, the joint frequency of women who own cats is 5. The edges, or totals of the table are called marginal distributions. </br>
+<strong>Joint relative frequency</strong> is the ratio of the frequency in a certain category and the total number of data points in that category. In the above table, 7 people own cats, and two of those are men. So the joint relative frequency of male cat owners is 2/7.</p>
+<h1 id="mark-marginal-relative-frequency-mark"><mark> Marginal (relative) frequency </mark></h1>
+<p>Marginal relative frequency is the ratio between the frequency of a row total or column total to the total frequency of the data. It is commonly used to analyze general trends in one specific category of data.
+$$
+Freq(fish) = \frac{Freq(fish)}{Freq(total)}= \frac{7} {22}
+$$</p>
+<h1 id="mark-conditional-relative-frequency-mark"><mark> Conditional (relative) frequency </mark></h1>
+<p>Conditional relative frequency is a fraction that tells you how many members of a group have a particular characteristic. More technically, it is the ratio of a frequency in the center of the table to the frequency’s row total or column total.
+For example with our table we have that the conditional relative frequency that the person is a man, given that he own a fish is:
+$$
+Freq(man | fish) = \frac{Freq(man \cap fish)}{Freq(fish)}= \frac{4} {7}
+$$</p>
+<h1 id="mark-statistical-independence-mark"><mark> Statistical Independence </mark></h1>
+<p>We ha ve statistical independence if:
+$$
+Pr(A|B)=Pr(A)
+$$
+we say that A is statistically independent of B: whether B happens makes no difference to how often A happens. <br>
+
+Since \(Pr(A \cap B)=Pr(A|B)Pr(B)\), if A is independent of B, then
+</p>
+<p>$$
+Pr(A \cap B) = Pr(A)Pr(B)
+$$</p>
+<p>If this holds, though, then B is also independent of A:</p>
+<p>$$
+Pr(B|A)=\frac{Pr(A \cap B)} {Pr(A)} = \frac{Pr(A)Pr(B)} {Pr(A)} = Pr(B)
+$$</p>
+<h1 id="references">References</h1>
+<p>[1] statisticshowto.com, &ldquo;Joint Frequency&rdquo;, 2022, <a href="https://www.statisticshowto.com/joint-frequency/">URL</a>, <br>
+[2] statisticshowto.com, &ldquo;Conditional Relative Frequency: How to Find Them&rdquo;, 2022, <a href="https://www.statisticshowto.com/conditional-relative-frequency/">URL</a>, <br>
+[3] study.com, &ldquo;All about Joint, Marginal, and Conditional Frequencies&rdquo;, <a href="https://study.com/learn/lesson/conditional-joint-marginal-relative-frequency-overview-comparison-examples.html#:~:text=%2C%20or%202%25.-,What%20is%20Marginal%20Relative%20Frequency%3F,one%20specific%20category%20of%20data.">URL</a>., <br>
+[4] stat.cmu.edu, &ldquo;Lecture 5: Statistical Independence, Discrete Random Variables&rdquo;, 2005, <a href="https://www.stat.cmu.edu/~cshalizi/36-220/lecture-5.pdf">URL</a>.</p>
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    <img class="about__logo" src="https://AndreaDipa.github.io/images/rice.svg" alt="Logo">
+<h1 class="about__title">Andrea&#39;s Blog</h1>
+<p class="about__description">Andrea Di Paolo&rsquo;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023.</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/AndreaDipa" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:andreadipaa@gmail.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            By Andrea Di Paolo, 
+            2022-10-13
+        </p>
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright"></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
