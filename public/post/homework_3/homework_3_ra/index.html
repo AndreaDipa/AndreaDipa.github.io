@@ -19,6 +19,11 @@
 <link rel="stylesheet" href="https://AndreaDipa.github.io/css/risotto.css">
 <link rel="stylesheet" href="https://AndreaDipa.github.io/css/custom.css">
 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 </head>
 
     <body>
@@ -43,7 +48,54 @@
         <h1>Homework 3, research on application</h1>
     </header>
     <div class="content__body">
-        
+        <p>Assignment:</p>
+<ul>
+    <li> A survey on online algorithms (Welford), </li>
+    <li> in particular, Knuth recursion for the computation of the arithmetic mean (average). </li>
+</ul>
+<p>An online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the beginning.
+In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand.</p>
+<h1 id="mark-welfords-online-algorithm-mark"><mark> Welford&rsquo;s online algorithm </mark></h1>
+<p>The standard deviation is a measure of how much a dataset differs from its mean; it tells us how dispersed the data are. A dataset that’s pretty much clumped around a single point would have a small standard deviation, while a dataset that’s all over the map would have a large standard deviation.<br>
+
+Given a sample \(x_1,…,x_N\), the standard deviation is defined as the square root of the variance:
+
+$$
+s^2 = \frac{\sum_{i=1}^{N}(x_i - \bar{x})^2}{N-1}, s = \sqrt{s^2}
+$$
+
+where \(\bar{x} = \frac{1}{N}\sum_{i=1}^{N}x_i \).
+Welford method is derivable by looking at the differences between the sums of squared differences for \(N\) and \(N-1\):
+</p>
+<p>$$
+(N-1)s^2_N - (N-2)s^2_{N-1}
+$$
+
+
+and with simple computation: 
+    \((x_N-\bar{x}_N)(x_N-\bar{x}_{N-1})\).
+
+So we can obtain the algorithm:</p>
+<pre tabindex="0"><code>variance(samples):
+  M := 0
+  S := 0
+  for k from 1 to N:
+    x := samples[k]
+    oldM := M
+    M := M + (x-M)/k
+    S := S + (x-M)*(x-oldM)
+  return S/(N-1)
+</code></pre><h1 id="mark-knuths-algorithm-mark"><mark> Knuth&rsquo;s algorithm </mark></h1>
+<p>Classical averaging with the aid of software can lead to several types of error, first and foremost Catastrophic Cancellation, i.e. the deletion of significant figures. In addition, for large amounts of data, there can be anomalies and disadvantages due to high calculation and memory times. <br>
+In order to overcome this type of problem, the computer scientist Donald Knuth proposed a different algorithmic formulation for calculating the mean:<br>
+<br>
+
+    \(\bar{x}_n = \bar{x}_{n-1} + \frac{1}{n}(x_n - \bar{x}_{n-1})\)
+</p>
+<h1 id="references">References</h1>
+<p>[1] geeksforgeeks.org, &ldquo;Online Algorithm&rdquo;, 2017, <a href="geeksforgeeks.org/online-algorithm/">URL</a>, <br>
+[2] jonisalonen.com, &ldquo;Welford’s method for computing variance&rdquo;, 2013 <a href="https://jonisalonen.com/2013/deriving-welfords-method-for-computing-variance/">URL</a>, <br>
+[3] statisticaapplicata800375216.wordpress.com, &ldquo;Algoritmo di Knuth per il calcolo della “running mean”,  2020 <a href="https://statisticaapplicata800375216.wordpress.com/2020/03/25/algoritmo-di-knuth-per-il-calcolo-della-running-mean/">URL</a>.</p>
     </div>
     <footer class="content__footer"></footer>
 
