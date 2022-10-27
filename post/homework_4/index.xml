@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework_4 on Andrea&#39;s Statistics Blog</title>
+    <link>https://AndreaDipa.github.io/post/homework_4/</link>
+    <description>Recent content in Homework_4 on Andrea&#39;s Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Oct 2022 15:53:44 +0200</lastBuildDate><atom:link href="https://AndreaDipa.github.io/post/homework_4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homework 4, application</title>
+      <link>https://AndreaDipa.github.io/post/homework_4/homework_4_application/</link>
+      <pubDate>Sun, 23 Oct 2022 18:41:50 +0200</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_4/homework_4_application/</guid>
+      <description>&lt;p&gt;Assignment: &lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt; Generate a m sequences of n trials distributed according a Binomial with success probability p and represent the following quantities: absolute frequency of success, relative frequency of success, &#34;normalized&#34; relative frequency of success, &lt;/li&gt;
+    &lt;li&gt; in the same chart, add also a vertical histogram representing the distribution of the above 3 types of frequencies on the last trial.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Homework 4, research</title>
+      <link>https://AndreaDipa.github.io/post/homework_4/homework_4_research/</link>
+      <pubDate>Sun, 23 Oct 2022 18:41:31 +0200</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_4/homework_4_research/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt; Illustrate the parallel between the properties of the relative frequency and the axioms for probability, &lt;/li&gt;
+    &lt;li&gt; discuss some concrete examples of Measure Space (omega,epsilon,P), &lt;/li&gt;
+    &lt;li&gt; illustrate how Measure Theory provides the mathematical foundation for Probability. &lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Homework 4, research on application</title>
+      <link>https://AndreaDipa.github.io/post/homework_4/homework_4_ra/</link>
+      <pubDate>Sun, 23 Oct 2022 18:09:21 +0200</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_4/homework_4_ra/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt; Give a simple introduction to graphics in the .NET environment. How to create a bitmap and a chart on it, &lt;/li&gt;
+    &lt;li&gt; explain in simple terms how to get device coordinates from world coordinates. &lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
