@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head><title>Homework 4, application &ndash; Andrea&#39;s Statistics Blog</title>
+<meta name="description" content="Andrea Di Paolo&#39;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023. ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/risotto.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/custom.css">
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><h1 class="page__logo"><a href="https://AndreaDipa.github.io/" class="page__logo-inner">Andrea&#39;s Statistics Blog</a></h1>
+<nav class="page__nav main-nav">
+    <ul>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://AndreaDipa.github.io/about/" title="">About</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="https://AndreaDipa.github.io/post/" title="Homeworks">Homeworks</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Homework 4, application</h1>
+    </header>
+    <div class="content__body">
+        <p>Assignment: <br></p>
+<ul>
+    <li> Generate a m sequences of n trials distributed according a Binomial with success probability p and represent the following quantities: absolute frequency of success, relative frequency of success, "normalized" relative frequency of success, </li>
+    <li> in the same chart, add also a vertical histogram representing the distribution of the above 3 types of frequencies on the last trial.</li>
+</ul>
+<h1 id="mark-binomial-simulation-mark"><mark> Binomial simulation </mark></h1>
+<p>In this application i simulate a Binomial distribution and I plot the absolute, relative and normalized frequencies.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/QOYkAuBomnc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h2 id="mark-c-codemark"><mark> C# code</mark></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> Homework4
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form1</span> : Form
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Interval</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> up;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> down;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> Interval(<span style="color:#66d9ef">int</span> down, <span style="color:#66d9ef">int</span> up)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">this</span>.up = up;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">this</span>.down = down;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">string</span> ToString()
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> down.ToString() + <span style="color:#e6db74">&#34; - &#34;</span> + up.ToString();
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        Bitmap b;
+</span></span><span style="display:flex;"><span>        Graphics g;
+</span></span><span style="display:flex;"><span>        Random random = <span style="color:#66d9ef">new</span> Random();
+</span></span><span style="display:flex;"><span>        Pen PenTrajectory = <span style="color:#66d9ef">new</span> Pen(Color.OrangeRed, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> successProbability = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> Form1()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            InitializeComponent();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button1_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            successProbability = (<span style="color:#66d9ef">double</span>)numericUpDown3.Value;
+</span></span><span style="display:flex;"><span>            b = <span style="color:#66d9ef">new</span> Bitmap(pictureBox1.Width, pictureBox1.Height);
+</span></span><span style="display:flex;"><span>            g = Graphics.FromImage(b);
+</span></span><span style="display:flex;"><span>            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+</span></span><span style="display:flex;"><span>            g.Clear(Color.White);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> TrialsCount = (<span style="color:#66d9ef">int</span>)numericUpDown1.Value;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> TrajectoryNumber = (<span style="color:#66d9ef">int</span>)numericUpDown2.Value;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">double</span> minX = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">double</span> maxX = (<span style="color:#66d9ef">double</span>)TrialsCount;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">double</span> minY = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">double</span> maxY = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (checkBox3.Checked == <span style="color:#66d9ef">true</span>) maxY = (<span style="color:#66d9ef">double</span>)TrialsCount;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (checkBox1.Checked == <span style="color:#66d9ef">true</span>) maxY = <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (checkBox2.Checked == <span style="color:#66d9ef">true</span>) maxY = ((<span style="color:#66d9ef">double</span>)TrialsCount) / Math.Sqrt((<span style="color:#66d9ef">double</span>)TrialsCount);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">double</span> Y = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            Rectangle r = <span style="color:#66d9ef">new</span> Rectangle(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>, b.Width - <span style="color:#ae81ff">300</span>, b.Height - <span style="color:#ae81ff">40</span>);
+</span></span><span style="display:flex;"><span>            g.FillRectangle(Brushes.Black, r);
+</span></span><span style="display:flex;"><span>            g.DrawRectangle(Pens.Black, r);
+</span></span><span style="display:flex;"><span>            List&lt;Point&gt; lastpoints = <span style="color:#66d9ef">new</span> List&lt;Point&gt;();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> t = <span style="color:#ae81ff">0</span>; t &lt; TrajectoryNumber; t++)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                List&lt;Point&gt; points = <span style="color:#66d9ef">new</span> List&lt;Point&gt;();
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">double</span> Y1 = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> X = <span style="color:#ae81ff">0</span>; X &lt; TrialsCount; X++)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    random.NextDouble();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (random.NextDouble() &lt; successProbability) Y1 = Y1 + <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (checkBox3.Checked == <span style="color:#66d9ef">true</span>) Y = Y1;
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (checkBox1.Checked == <span style="color:#66d9ef">true</span>) Y = Y1 / (X + <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (checkBox2.Checked == <span style="color:#66d9ef">true</span>) Y = Y1 / Math.Sqrt(X + <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">int</span> xCord = linearTransformX(X, minX, maxX, r.Left, r.Width);
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">int</span> yCord = linearTransformY(Y, minY, maxY, r.Top, r.Height);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    Point p = <span style="color:#66d9ef">new</span> Point(xCord, yCord);
+</span></span><span style="display:flex;"><span>                    points.Add(p);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (X == TrialsCount - <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        lastpoints.Add(p);
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                g.DrawLines(PenTrajectory, points.ToArray());
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> min_y = lastpoints.Min(p =&gt; p.Y);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> max_y = lastpoints.Max(p =&gt; p.Y);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            Rectangle r2 = <span style="color:#66d9ef">new</span> Rectangle(r.Right + <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">260</span>, b.Height - <span style="color:#ae81ff">40</span>);
+</span></span><span style="display:flex;"><span>            g.FillRectangle(Brushes.Black, r2);
+</span></span><span style="display:flex;"><span>            g.DrawRectangle(Pens.Black, r2);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (TrajectoryNumber == <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">foreach</span> (Point p <span style="color:#66d9ef">in</span> lastpoints)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    Rectangle re = <span style="color:#66d9ef">new</span> Rectangle(r2.Left + <span style="color:#ae81ff">10</span>, p.Y - <span style="color:#ae81ff">10</span>, r2.Right - r2.Left - <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>                    g.FillRectangle(Brushes.Green, re);
+</span></span><span style="display:flex;"><span>                    g.DrawRectangle(Pens.White, re);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> intervals_number = TrajectoryNumber / <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (intervals_number &gt; <span style="color:#ae81ff">15</span>)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    intervals_number = <span style="color:#ae81ff">15</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (intervals_number &lt;= <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    intervals_number = <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> span = max_y - min_y;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> interval_size = (max_y - min_y) / intervals_number;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">while</span> (min_y + interval_size * intervals_number &lt; max_y + <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    intervals_number++;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> minimo = min_y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                Dictionary&lt;Interval, <span style="color:#66d9ef">int</span>&gt; intervalli = <span style="color:#66d9ef">new</span> Dictionary&lt;Interval, <span style="color:#66d9ef">int</span>&gt;();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j = <span style="color:#ae81ff">0</span>; j &lt; intervals_number; j++)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    Interval intervallo = <span style="color:#66d9ef">new</span> Interval(minimo, minimo + interval_size);
+</span></span><span style="display:flex;"><span>                    minimo = minimo + interval_size;
+</span></span><span style="display:flex;"><span>                    intervalli[intervallo] = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">foreach</span> (Point p <span style="color:#66d9ef">in</span> lastpoints)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    List&lt;Interval&gt; inter = intervalli.Keys.ToList();
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">int</span> intY = (<span style="color:#66d9ef">int</span>)p.Y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">foreach</span> (Interval i <span style="color:#66d9ef">in</span> inter)
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> (intY &gt;= i.down &amp;&amp; intY &lt; i.up)
+</span></span><span style="display:flex;"><span>                        {
+</span></span><span style="display:flex;"><span>                            intervalli[i]++;
+</span></span><span style="display:flex;"><span>                        }
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                List&lt;Rectangle&gt; chart = <span style="color:#66d9ef">new</span> List&lt;Rectangle&gt;();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> dimdisp = r2.Right - r2.Left - <span style="color:#ae81ff">20</span>; 
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> maxValue = intervalli.Values.Max();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> v <span style="color:#66d9ef">in</span> intervalli)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">double</span> intensity = ((<span style="color:#66d9ef">double</span>)v.Value / (<span style="color:#66d9ef">double</span>)maxValue) * dimdisp;
+</span></span><span style="display:flex;"><span>                    Rectangle rect = <span style="color:#66d9ef">new</span> Rectangle(r2.Left + <span style="color:#ae81ff">10</span>, v.Key.down, (<span style="color:#66d9ef">int</span>)intensity, interval_size);
+</span></span><span style="display:flex;"><span>                    chart.Add(rect);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">foreach</span> (Rectangle re <span style="color:#66d9ef">in</span> chart)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    g.FillRectangle(Brushes.Green, re);
+</span></span><span style="display:flex;"><span>                    g.DrawRectangle(Pens.White, re);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                pictureBox1.Image = b;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            pictureBox1.Image = b;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> linearTransformX(<span style="color:#66d9ef">double</span> X, <span style="color:#66d9ef">double</span> minX, <span style="color:#66d9ef">double</span> maxX, <span style="color:#66d9ef">int</span> Left, <span style="color:#66d9ef">int</span> W)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> Left + (<span style="color:#66d9ef">int</span>)(W * ((X - minX) / (maxX - minX)));
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> linearTransformY(<span style="color:#66d9ef">double</span> Y, <span style="color:#66d9ef">double</span> minY, <span style="color:#66d9ef">double</span> maxY, <span style="color:#66d9ef">int</span> Top, <span style="color:#66d9ef">int</span> H)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> Top + (<span style="color:#66d9ef">int</span>)(H - H * ((Y - minY) / (maxY - minY)));
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> checkBox2_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            checkBox3.Checked = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>            checkBox1.Checked = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> checkBox3_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            checkBox1.Checked = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>            checkBox2.Checked = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> checkBox1_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            checkBox3.Checked = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>            checkBox2.Checked = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="https://github.com/AndreaDipa/Statistics-homeworks">Github Repository</a></p>
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    <img class="about__logo" src="https://AndreaDipa.github.io/images/rice.svg" alt="Logo">
+<h1 class="about__title">Andrea&#39;s Blog</h1>
+<p class="about__description">Andrea Di Paolo&rsquo;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023.</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/AndreaDipa" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:andreadipaa@gmail.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            By Andrea Di Paolo, 
+            2022-10-23
+        </p>
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright"></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
