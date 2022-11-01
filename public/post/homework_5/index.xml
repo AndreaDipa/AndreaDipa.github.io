@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework 5 on Andrea&#39;s Statistics Blog</title>
+    <link>https://AndreaDipa.github.io/post/homework_5/</link>
+    <description>Recent content in Homework 5 on Andrea&#39;s Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Oct 2022 17:44:25 +0200</lastBuildDate><atom:link href="https://AndreaDipa.github.io/post/homework_5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homework_5_ra</title>
+      <link>https://AndreaDipa.github.io/post/homework_5/homework_5_ra/</link>
+      <pubDate>Sat, 29 Oct 2022 17:45:03 +0200</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_5/homework_5_ra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Homework 5, research</title>
+      <link>https://AndreaDipa.github.io/post/homework_5/homework_5_research/</link>
+      <pubDate>Sat, 29 Oct 2022 17:45:00 +0200</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_5/homework_5_research/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Explain all possible derivation of the arithmetic mean and in general of the other common types of averages,&lt;/li&gt;
+    &lt;li&gt;illustrate the difference between &#34;mathematical convergence&#34; and &#34;convergence&#34; in probability,&lt;/li&gt;
+    &lt;li&gt;illustrate the differences between Descriptive Statistics and Inferential Statistics and the role of probability and probability distributions.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Homework 5, application</title>
+      <link>https://AndreaDipa.github.io/post/homework_5/homework_5_application/</link>
+      <pubDate>Sat, 29 Oct 2022 17:44:50 +0200</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_5/homework_5_application/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Given an arbitrary rectangle and a distribution, create the corresponding histogram or column chart, with both vertical and horizontal orientation,&lt;/li&gt;
+    &lt;li&gt;given a rectangle, enable its movement/resize/zoom using a mouse (this will be the resizable where we will draw alll future charts).&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
