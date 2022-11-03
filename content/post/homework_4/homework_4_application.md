@@ -12,7 +12,7 @@ Assignment: <br>
 </ul>
 <!--more-->
 # <mark> Binomial simulation </mark>
-In this application i simulate a Binomial distribution and I plot the absolute, relative and normalized frequencies.
+In this application I simulate a Binomial distribution and I plot the absolute, relative and normalized frequencies.
 {{< youtube QOYkAuBomnc >}}
 ## <mark> C# code</mark>
 ```cs

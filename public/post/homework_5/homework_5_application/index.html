@@ -48,6 +48,191 @@
     <li>Given an arbitrary rectangle and a distribution, create the corresponding histogram or column chart, with both vertical and horizontal orientation,</li>
     <li>given a rectangle, enable its movement/resize/zoom using a mouse (this will be the resizable where we will draw alll future charts).</li>
 </ul>
+<h1 id="mark-c-application-mark"><mark> C# application </mark></h1>
+<p>In this application I simply draw a rectangle, resize and move it. Then I draw horizontal and vertical histogram of the distribution that i generate in the third homework with Wireshark.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/IMKKJxcRz5M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h1 id="mark-c-code-mark"><mark> C# code </mark></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form1</span> : Form
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> Form1()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            InitializeComponent();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Bitmap b;
+</span></span><span style="display:flex;"><span>        Graphics g;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> x_down;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> y_down;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> x_mouse;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> y_mouse;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> r_width;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> r_height;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Rectangle r;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">bool</span> drag = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">bool</span> resizing = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        Dictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt; times = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt;();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button1_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            b = <span style="color:#66d9ef">new</span> Bitmap(pictureBox1.Width, pictureBox1.Height);
+</span></span><span style="display:flex;"><span>            g = Graphics.FromImage(b);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            r = <span style="color:#66d9ef">new</span> Rectangle(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">300</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            g.DrawRectangle(Pens.Black, r);
+</span></span><span style="display:flex;"><span>            g.FillRectangle(Brushes.Black, r);
+</span></span><span style="display:flex;"><span>            pictureBox1.Image = b;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> pictureBox1_MouseDown(<span style="color:#66d9ef">object</span> sender, MouseEventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (r.Contains(e.X, e.Y))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                x_mouse = e.X;
+</span></span><span style="display:flex;"><span>                y_mouse = e.Y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                x_down = r.X;
+</span></span><span style="display:flex;"><span>                y_down = r.Y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                r_width = r.Width;
+</span></span><span style="display:flex;"><span>                r_height = r.Height;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (e.Button == MouseButtons.Left)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    drag = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (e.Button == MouseButtons.Right)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    resizing = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> pictureBox1_MouseUp(<span style="color:#66d9ef">object</span> sender, MouseEventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            drag = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>            resizing = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> pictureBox1_MouseMove(<span style="color:#66d9ef">object</span> sender, MouseEventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> delta_x = e.X - x_mouse;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> delta_y = e.Y - y_mouse;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (r != <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (drag)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    r.X = x_down + delta_x;
+</span></span><span style="display:flex;"><span>                    r.Y = y_down + delta_y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    redraw(r, g);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (resizing)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    r.Width = r_width + delta_x;
+</span></span><span style="display:flex;"><span>                    r.Height = r_height + delta_y;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    redraw(r, g);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> redraw(Rectangle r, Graphics g)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            g.Clear(Color.White);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            g.DrawRectangle(Pens.Black, r);
+</span></span><span style="display:flex;"><span>            g.FillRectangle(Brushes.Black, r);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (checkBox1.Checked == <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>                drawHisto();
+</span></span><span style="display:flex;"><span>            pictureBox1.Image = b;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button2_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> filePath = String.Empty;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (openFileDialog1.ShowDialog() == DialogResult.OK)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                filePath = openFileDialog1.FileName;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> headerLine <span style="color:#66d9ef">in</span> File.ReadLines(filePath).Take(<span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> headerItem <span style="color:#66d9ef">in</span> headerLine.Split(<span style="color:#66d9ef">new</span>[] { <span style="color:#e6db74">&#39;,&#39;</span> }, StringSplitOptions.RemoveEmptyEntries))
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">var</span> column = <span style="color:#66d9ef">new</span> DataGridViewTextBoxColumn();
+</span></span><span style="display:flex;"><span>                    column.Name = headerItem;
+</span></span><span style="display:flex;"><span>                    column.HeaderText = headerItem;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> line <span style="color:#66d9ef">in</span> File.ReadLines(filePath).Skip(<span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> protocol = line.Split(<span style="color:#e6db74">&#39;,&#39;</span>)[<span style="color:#ae81ff">4</span>];
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (!times.ContainsKey(protocol))
+</span></span><span style="display:flex;"><span>                    times[protocol] = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>                    times[protocol]++;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> drawHisto()
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> maxvalue = times.Values.Max();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> space_height = r.Bottom - r.Top - <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> space_width = r.Right - r.Left - <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> num_intervals = times.Keys.Count;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> histrect_width_hor = space_height / num_intervals;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> histrect_width_ver = space_width / num_intervals;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> startY = r.Y;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> startX = r.X;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">foreach</span> (KeyValuePair&lt;String, <span style="color:#66d9ef">int</span>&gt; k <span style="color:#66d9ef">in</span> times)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> rect_height_hor = (<span style="color:#66d9ef">int</span>)(((<span style="color:#66d9ef">double</span>)k.Value / (<span style="color:#66d9ef">double</span>)maxvalue) * ((<span style="color:#66d9ef">double</span>)space_width));
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">int</span> rect_height_ver = (<span style="color:#66d9ef">int</span>)(((<span style="color:#66d9ef">double</span>)k.Value / (<span style="color:#66d9ef">double</span>)maxvalue) * ((<span style="color:#66d9ef">double</span>)space_height));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                Rectangle hist_rect_hor = <span style="color:#66d9ef">new</span> Rectangle(r.Left - rect_height_hor, startY, rect_height_hor, histrect_width_hor);
+</span></span><span style="display:flex;"><span>                Rectangle hist_rect_ver = <span style="color:#66d9ef">new</span> Rectangle(startX, r.Bottom, histrect_width_ver, rect_height_ver);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                g.FillRectangle(Brushes.Green, hist_rect_hor);
+</span></span><span style="display:flex;"><span>                g.DrawRectangle(Pens.White, hist_rect_hor);
+</span></span><span style="display:flex;"><span>                g.FillRectangle(Brushes.Green, hist_rect_ver);
+</span></span><span style="display:flex;"><span>                g.DrawRectangle(Pens.White, hist_rect_ver);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                startY += histrect_width_hor;
+</span></span><span style="display:flex;"><span>                startX += histrect_width_ver;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            pictureBox1.Image = b;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> checkBox1_CheckedChanged(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (checkBox1.Checked == <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>                drawHisto();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (checkBox1.Checked == <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>                redraw(r, g);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
     </div>
     <footer class="content__footer"></footer>
 
