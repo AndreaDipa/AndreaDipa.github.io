@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework_6 on Andrea&#39;s Statistics Blog</title>
+    <link>https://AndreaDipa.github.io/post/homework_6/</link>
+    <description>Recent content in Homework_6 on Andrea&#39;s Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Nov 2022 16:58:46 +0100</lastBuildDate><atom:link href="https://AndreaDipa.github.io/post/homework_6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homework 6, application</title>
+      <link>https://AndreaDipa.github.io/post/homework_6/homework_6_application/</link>
+      <pubDate>Mon, 07 Nov 2022 17:00:19 +0100</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_6/homework_6_application/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Take any population and any variable X and draw m (large) samples of size n (as you like) and represent the following 2 distributions : 
+    Distribution of the Mean and Distribution of the Variance, &lt;/li&gt;
+    &lt;li&gt;finally, for each distribution compute mean and variance and compare with the corrisponding values in the population.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Homework 6, research</title>
+      <link>https://AndreaDipa.github.io/post/homework_6/homework_6_research/</link>
+      <pubDate>Mon, 07 Nov 2022 17:00:14 +0100</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_6/homework_6_research/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Try to explain in your own words, the concept of population and sampling distribution, &lt;/li&gt;
+    &lt;li&gt;show the expected value and variance of the sampling mean and take a look at the same sampling variance.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

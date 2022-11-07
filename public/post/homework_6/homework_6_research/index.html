@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head><title>Homework 6, research &ndash; Andrea&#39;s Statistics Blog</title>
+<meta name="description" content="Andrea Di Paolo&#39;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023. ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/risotto.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/custom.css">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><h1 class="page__logo"><a href="https://AndreaDipa.github.io/" class="page__logo-inner">Andrea&#39;s Statistics Blog</a></h1>
+<nav class="page__nav main-nav">
+    <ul>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://AndreaDipa.github.io/about/" title="">About</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="https://AndreaDipa.github.io/post/" title="Homeworks">Homeworks</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Homework 6, research</h1>
+    </header>
+    <div class="content__body">
+        <p>Assignment:</p>
+<ul>
+    <li>Try to explain in your own words, the concept of population and sampling distribution, </li>
+    <li>show the expected value and variance of the sampling mean and take a look at the same sampling variance.</li>
+</ul>
+<h1 id="mark-population-distribution-mark"><mark> Population distribution </mark></h1>
+
+The population is the whole set of values, or individuals, you are interested in. For example, if you want to know the average height of the residents of India, that is your population, ie, the population of India.
+Population characteristic are mean (\(\mu\)), Standard deviation (\(\sigma\)) , proportion (P) , median,  percentiles etc. The value of a population characteristic is fixed. This characteristics are called population distribution. They are symbolized by Greek characters as they are population parameters.
+
+<h1 id="mark-sampling-distribution-mark"><mark> Sampling distribution </mark></h1>
+
+
+The sample is a subset of the population, and is the set of values you actually use in your estimation. Let’s think 1000 individual you have selected for your study to know about average height of the residents of India. This sample has some quantity computed from values e.g.  mean (x ), Standard deviation (s) , sample proportion etc. This is called sample distribution. The mean and standard deviation are symbolized by Roman characters as they are sample statistics.<br> 
+
+Formally, given a population, we can represent it as a random variable \(X\). A random sample of a population of size n can be represented as a set of n random variables:
+$$
+    X_1, X_2, ..., X_n
+$$
+where they are all identically distributed with each other since they have the same distribution of X.
+ 
+
+<h1 id="mark-expected-value-and-variance-of-the-sampling-mean-mark"><mark> Expected value and variance of the sampling mean </mark></h1>
+
+
+The sample mean is basically the mean of the random sample that we define previously:
+$$
+    \bar{X} = \frac{X_1 + X_2 + ... + X_n}{n}
+$$
+
+The expected value (also called expectation, expectancy, mathematical expectation, mean, average, or first moment) is a generalization of the weighted average. Informally, the expected value is the arithmetic mean of a large number of independently selected outcomes of a random variable.
+Now we want to compute the expected value of the sampling mean:
+$$
+    E(\bar{X}) = E\left (\frac{X_1 + X_2 + ... + X_n}{n}\right)
+$$
+Then, for the linearity property of the expected value \(E(aX) = aE(X)\):
+$$
+    E(\bar{X}) = \frac{1}{n}E({X_1 + X_2 + ... + X_n})
+$$
+Always for the linearity property we have that \(E(X + Y) = E(X) + E(Y)\):
+$$
+    E(\bar{X}) = \frac{1}{n}[E(X_1) + E(X_2) + ... + E(X_n)]
+$$
+Since \(X_1, X_2, ..., X_n\) are independent and identically distributed we have thate they have all the same expected value \(\mu\):
+$$
+    E(\bar{X}) = \frac{1}{n}[n\mu] = \mu
+$$
+We have shown that the mean (or expected value, if you prefer) of the sample mean \(\bar{X}\)is . That is, we have shown that the mean of \(\bar{X}\) is the same as the mean of the individual \(X_i\).
+
+The variance is the expectation of the squared deviation of a random variable from its population mean or sample mean. Variance is a measure of dispersion, meaning it is a measure of how far a set of numbers is spread out from their average value.
+Now we want to compute the variance of the sampling mean:
+$$
+    Var(\bar{X}) = Var\left(\frac{X_1 + X_2 + ... + X_n}{n}\right)
+$$
+we have that \(Var(X + Y) = Var(X) + Var(Y) + 2Cov(X,Y)\), but when \(X\) and \(Y\) are independent \(Cov(X,Y) = 0\). Using that property and that \(Var(aX) = a^2Var(X)\) we obtain:
+$$
+    Var(\bar{X}) = \frac{1}{n^2}Var(X_1) + \frac{1}{n^2}Var(X_2) + ... + \frac{1}{n^2}Var(X_n)  
+$$
+The \(X_i\) are identically distributed, which means they have the same variance \(\sigma^2\), then:
+$$
+    Var(\bar{X}) = \frac{1}{n^2}[n\sigma^2] = \frac{\sigma^2}{n}
+$$
+
+
+<h1 id="mark-expected-value-and-variance-of-the-sampling-variance-mark"><mark> Expected value and variance of the sampling variance </mark></h1>
+<p>The sample variance is defined as:
+$$
+S^2 = \frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2
+$$
+The expected value of the sampling variance is:
+$$
+E(S^2) = E\left(\frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2\right) = \frac{n-1}{n}\sigma^2
+$$
+The variance of the sampling variance, instead, is:
+$$
+Var(S^2) = \frac{\mu_4}{n} - \frac{\sigma^4(n-3)}{n(n-1)}
+$$
+where (\mu_4) is the fourth central moment of (X), defined as:
+$$
+\mu_4 = E[(X-\mu)^4]
+$$</p>
+<h1 id="references">References</h1>
+<p>[1] makemeanalyst.com, &ldquo;population distribution, sample distribution and sampling distribution&rdquo;, <a href="https://makemeanalyst.com/observational-studies-and-experiments/population-distribution-sample-distribution-and-sampling-distribution/">URL</a>, <br>
+[2] en.wikipedia.org, &ldquo;Sampling distribution&rdquo;, <a href="https://en.wikipedia.org/wiki/Sampling_distribution">URL</a>, <br>
+[3] online.stat.psu.edu, &ldquo;Mean and Variance of Sample Mean&rdquo;, <a href="https://online.stat.psu.edu/stat414/lesson/24/24.4">URL</a>, <br>
+[4] en.wikipedia.org, &ldquo;Variance&rdquo;, <a href="https://en.wikipedia.org/wiki/Variance">URL</a>.</p>
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    <img class="about__logo" src="https://AndreaDipa.github.io/images/rice.svg" alt="Logo">
+<h1 class="about__title">Andrea&#39;s Blog</h1>
+<p class="about__description">Andrea Di Paolo&rsquo;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023.</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/AndreaDipa" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:andreadipaa@gmail.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            By Andrea Di Paolo, 
+            2022-11-07
+        </p>
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright"></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
