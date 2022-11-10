@@ -11,3 +11,10 @@ Assignment:
     <li>finally, for each distribution compute mean and variance and compare with the corrisponding values in the population.</li>
 </ul>
 <!--more-->
+
+# <mark> C# Application </mark>
+<br>
+{{< youtube yxHg_UD1czg>}}
+<br>
+
+[Github Repository](https://github.com/AndreaDipa/Statistics-homeworks)

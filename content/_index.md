@@ -10,23 +10,23 @@ author = "Andrea Di Paolo"
 
 
 
-## [Homework 5, application](https://AndreaDipa.github.io/post/homework_5/homework_5_application/) 
+## [Homework 6, application](https://AndreaDipa.github.io/post/homework_6/homework_6_application/) 
 
-Andrea Di Paolo, 29 October 2022
+Andrea Di Paolo, 07 November 2022
 
 Assignment:
 <ul>
-    <li>Given an arbitrary rectangle and a distribution, create the corresponding histogram or column chart, with both vertical and horizontal orientation,</li>
-    <li>given a rectangle, enable its movement/resize/zoom using a mouse (this will be the resizable where we will draw alll future charts).</li>
+    <li>Take any population and any variable X and draw m (large) samples of size n (as you like) and represent the following 2 distributions : 
+    Distribution of the Mean and Distribution of the Variance, </li>
+    <li>finally, for each distribution compute mean and variance and compare with the corrisponding values in the population.</li>
 </ul>
 
 
-## [Homework 5, research](https://AndreaDipa.github.io/post/homework_5/homework_5_research/) 
-Andrea Di Paolo, 29 October 2022
+## [Homework 6, research](https://AndreaDipa.github.io/post/homework_6/homework_6_research/) 
+Andrea Di Paolo, 07 November 2022
 
 Assignment:
 <ul>
-    <li>Explain all possible derivation of the arithmetic mean and in general of the other common types of averages,</li>
-    <li>illustrate the difference between "mathematical convergence" and "convergence" in probability,</li>
-    <li>illustrate the differences between Descriptive Statistics and Inferential Statistics and the role of probability and probability distributions.</li>
+    <li>Try to explain in your own words, the concept of population and sampling distribution, </li>
+    <li>show the expected value and variance of the sampling mean and take a look at the same sampling variance.</li>
 </ul>
