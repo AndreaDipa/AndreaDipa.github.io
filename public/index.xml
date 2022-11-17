@@ -8,6 +8,33 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Oct 2022 18:02:27 +0200</lastBuildDate><atom:link href="https://AndreaDipa.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Homework_7_application</title>
+      <link>https://AndreaDipa.github.io/post/homework_7/homework_7_application/</link>
+      <pubDate>Tue, 15 Nov 2022 09:01:59 +0100</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_7/homework_7_application/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Consider a general scheme and the simulation of previous homework and simulate the distribution of p = SUM(xi) , where xi are Bernoulli(lambda/n), with success probability lambda/n, where lambda is a user constant (&#34;arrival rate&#34;), &lt;/li&gt;
+    &lt;li&gt;Also plot the distribution of the &#34;interarrival times&#34;,&lt;/li&gt;
+    &lt;li&gt;Finally, search on the web to understand what you have actually simulated.  &lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Homework_7_research</title>
+      <link>https://AndreaDipa.github.io/post/homework_7/homework_7_research/</link>
+      <pubDate>Tue, 15 Nov 2022 09:01:52 +0100</pubDate>
+      
+      <guid>https://AndreaDipa.github.io/post/homework_7/homework_7_research/</guid>
+      <description>&lt;p&gt;Assignment:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Try to understand the general idea of the Lebesgue-Stieltjes integral and why it is useful concept and notation in Theory of Probability,&lt;/li&gt;
+    &lt;li&gt;Explain in your own words the &#34;Law of large numbers&#34; and sketch a simple proof (Markov inequality, Čebyšëv inequality, ... ).&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Homework 6, application</title>
       <link>https://AndreaDipa.github.io/post/homework_6/homework_6_application/</link>
       <pubDate>Mon, 07 Nov 2022 17:00:19 +0100</pubDate>
