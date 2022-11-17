@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head><title>Homework_7_research &ndash; Andrea&#39;s Statistics Blog</title>
+<meta name="description" content="Andrea Di Paolo&#39;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023. ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/risotto.css">
+<link rel="stylesheet" href="https://AndreaDipa.github.io/css/custom.css">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><h1 class="page__logo"><a href="https://AndreaDipa.github.io/" class="page__logo-inner">Andrea&#39;s Statistics Blog</a></h1>
+<nav class="page__nav main-nav">
+    <ul>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://AndreaDipa.github.io/about/" title="">About</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="https://AndreaDipa.github.io/post/" title="Homeworks">Homeworks</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Homework_7_research</h1>
+    </header>
+    <div class="content__body">
+        <p>Assignment:</p>
+<ul>
+    <li>Try to understand the general idea of the Lebesgue-Stieltjes integral and why it is useful concept and notation in Theory of Probability,</li>
+    <li>Explain in your own words the "Law of large numbers" and sketch a simple proof (Markov inequality, Čebyšëv inequality, ... ).</li>
+</ul>
+<h1 id="mark-lebesguestieltjes-integral-mark"><mark> Lebesgue–Stieltjes integral </mark></h1>
+<p>The Lebesgue–Stieltjes integral:
+$$
+\int_{a}^{b} f(x)dg(x)
+$$
+
+is defined when \(f: [a,b] \to \mathbb{R}\) is Borel-measurable (a Borel measure on a topological space is a measure that is defined on all open sets) and bounded and  \(g: [a,b] \to \mathbb{R}\)  is of bounded variation in \([a,b]\) and right-continuous, or when \(f\) is non-negative and \(g\) is monotone and right-continuous. <br>
+Where  f  is a continuous real-valued function of a real variable and v is a non-decreasing real function, the Lebesgue–Stieltjes integral is equivalent to the Riemann–Stieltjes integral, in which case we often write:
+$$
+\int_{a}^{b} f(x)dv(x)
+$$
+for the Lebesgue–Stieltjes integral, letting the measure \(μ_v\) remain implicit. This is particularly common in probability theory when v is the cumulative distribution function of a real-valued random variable X, in which case:
+$$
+\int_{-\infty}^{\infty} f(x)dv(x) = E[f(X)]
+$$
+if the moment E(Xn) exists, then it is equal to:
+$$
+\int_{-\infty}^{\infty} x^ndv(x) = E[X^n]
+$$
+</p>
+<h1 id="mark-markov-inequality-mark"><mark> Markov inequality </mark></h1>
+
+
+Let X be any positive continuous random variable, we can write:
+$$
+\begin{align*}
+E[X] &= \int_{-\infty}^{\infty} xf_X(x)dx \\
+     &= \int_{0}^{\infty} xf_X(x)dx \\
+    &\geq \int_{a}^{\infty}xf_X(x)dx \\
+    &\geq \int_{a}^{\infty}af_X(x)dx \\
+    &= a\int_{a}^{\infty}f_X(x)dx \\
+    &= aP(X\geq a)
+\end{align*}
+$$
+Thus, we conclude
+$$
+P(X>a) \leq \frac{E[X]}{a}\ \ for\ any\ a > 0 
+$$
+That is the Markov inequality.
+
+<h1 id="mark-chebyshevs-inequality-mark"><mark> Chebyshev&rsquo;s Inequality </mark></h1>
+
+
+Let \(X\) be any random variable. If you define \(Y=(X−E[X])^2\), then \(Y\) is a nonnegative random variable, so we can apply Markov's inequality to \(Y\). In particular, for any positive real number \(b\), we have:
+$$
+P(Y\geq b^2) \leq \frac{E[Y]}{b^2}
+$$
+we have that:
+$$
+E[Y]=E(X-E[X])^2 = Var(X)\, \\
+ P(Y \geq b^2) =P((X - E[X])^2 \geq b^2) = P(|X -E[X]| \geq b)
+$$
+so we obtain:
+$$
+P(|X -E[X]| \geq b) \leq \frac{Var(X)}{b^2}
+$$
+That is the Chebyshev's Inequality.
+
+<h1 id="marklaw-of-large-numbers-mark"><mark>Law of Large Numbers </mark></h1>
+<p>The law of large numbers has a very central role in probability and statistics. It states that if you repeat an experiment independently a large number of times and average the result, what you obtain should be close to the expected value. There are two main versions of the law of large numbers. They are called the weak and strong laws of the large numbers.</p>
+<h2 id="weak-laws-of-large-numbers-wlln">Weak laws of large numbers (WLLN)</h2>
+
+Let \(x_1, X_2, ..., X_n\) be i.i.d. random variables with a finite expected value \(E[X_i] = \mu < \infty\). The, for any \(\epsilon > 0\):
+$$
+\lim_{n \to \infty}P(|\bar{X} - \mu| \geq \epsilon) = 0
+$$
+Proof:
+we assume that \(Var(X)=\sigma^2\) is finite. Using the Chebyshev's inequality:
+$$
+P(|\bar{X} - \mu| \geq \epsilon) \leq \frac{Var(\bar(X))}{\epsilon^2} = \frac{Var(X)}{n\epsilon^2}
+$$
+wich goes to zero as \(n \to \infty\).
+
+<h1 id="references">References</h1>
+<p>[1] en.wikipedia.org, &ldquo;Lebesgue–Stieltjes integration&rdquo;, <a href="https://en.wikipedia.org/wiki/Lebesgue%E2%80%93Stieltjes_integration">URL</a>, <br>
+[2] en.wikipedia.org, &ldquo;Riemann–Stieltjes integral&rdquo;, <a href="https://en.wikipedia.org/wiki/Riemann%E2%80%93Stieltjes_integral">URL</a>, <br>
+[3] probabilitycourse.com, &ldquo;Markov and Chebyshev Inequalities&rdquo;, <a href="https://www.probabilitycourse.com/chapter6/6_2_2_markov_chebyshev_inequalities.php">URL</a>, <br>
+[4] probabilitycourse.com, &ldquo;Law of Large Numbers&rdquo;, <a href="https://www.probabilitycourse.com/chapter7/7_1_1_law_of_large_numbers.php">URL</a>, <br></p>
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    <img class="about__logo" src="https://AndreaDipa.github.io/images/rice.svg" alt="Logo">
+<h1 class="about__title">Andrea&#39;s Blog</h1>
+<p class="about__description">Andrea Di Paolo&rsquo;s Blog for the Statistics course of the master degree in Cybersecurity. Academic year 2022/2023.</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/AndreaDipa" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:andreadipaa@gmail.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            By Andrea Di Paolo, 
+            2022-11-15
+        </p>
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright"></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
