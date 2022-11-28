@@ -1,5 +1,5 @@
 ---
-title: "Homework_7_application"
+title: "Homework 7, application"
 date: 2022-11-15T09:01:59+01:00
 draft: false
 author: "Andrea Di Paolo"
@@ -12,4 +12,7 @@ Assignment:
    
 </ul>
 <!--more-->
+
+# <mark> C# Application </mark>
+{{< youtube wOWmRJCBdJE>}}
 

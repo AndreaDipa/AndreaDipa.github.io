@@ -10,23 +10,30 @@ author = "Andrea Di Paolo"
 
 
 
-## [Homework 6, application](https://AndreaDipa.github.io/post/homework_6/homework_6_application/) 
+## [Homework 8, application](https://AndreaDipa.github.io/post/homework_8/homework_8_application/) 
 
-Andrea Di Paolo, 07 November 2022
+Andrea Di Paolo, 24 November 2022
 
 Assignment:
 <ul>
-    <li>Take any population and any variable X and draw m (large) samples of size n (as you like) and represent the following 2 distributions : 
-    Distribution of the Mean and Distribution of the Variance, </li>
-    <li>finally, for each distribution compute mean and variance and compare with the corrisponding values in the population.</li>
+    <li>Consider R (radius), A(angle) uniform rv's and use them as random polar coordinates on a plane. Determine the empirical distribution of the corresponding Cartesian coordinates (X,Y).</li>
+    <li>Search for the methods to generate Normal rv's X from uniform rv's, and simulate the following distribution: X, X², X/Y², X²/Y², X/Y.</li>
 </ul>
 
 
-## [Homework 6, research](https://AndreaDipa.github.io/post/homework_6/homework_6_research/) 
-Andrea Di Paolo, 07 November 2022
+## [Homework 8, research](https://AndreaDipa.github.io/post/homework_8/homework_8_research/) 
+Andrea Di Paolo, 24 November 2022
 
 Assignment:
 <ul>
-    <li>Try to explain in your own words, the concept of population and sampling distribution, </li>
-    <li>show the expected value and variance of the sampling mean and take a look at the same sampling variance.</li>
+    <li>Search on the web about possible derivation of the Normal Distribution,</li>
+    <li>Search on the web about method to generate normal variate (eg Marsaglia method, etc.).</li>
+</ul>
+
+## [Homework 8, research on application](https://AndreaDipa.github.io/post/homework_8/homework_8_ra/) 
+Andrea Di Paolo, 24 November 2022
+
+Assignment:
+<ul>
+    <li>Find in the web what are the distributions that you just simulated.</li>
 </ul>

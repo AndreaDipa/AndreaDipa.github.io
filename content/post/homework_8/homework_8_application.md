@@ -10,3 +10,7 @@ Assignment:
     <li>Search for the methods to generate Normal rv's X from uniform rv's, and simulate the following distribution: X, X², X/Y², X²/Y², X/Y.</li>
 </ul>
 <!--more-->
+
+# <mark> C# Application</mark>
+{{< youtube hl79ArBT0Kk >}}
+{{< youtube UwRFD6g8AKA >}}
