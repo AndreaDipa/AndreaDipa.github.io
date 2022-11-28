@@ -19,6 +19,11 @@
 <link rel="stylesheet" href="https://AndreaDipa.github.io/css/risotto.css">
 <link rel="stylesheet" href="https://AndreaDipa.github.io/css/custom.css">
 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 </head>
 
     <body>
@@ -41,15 +46,78 @@
             <section class="page__body">
     <header class="content__header">
         <h1>Homework 8, research</h1>
-    </header>
-    <div class="content__body">
         <p>Assignment:</p>
 <ul>
     <li>Search on the web about possible derivation of the Normal Distribution,</li>
     <li>Search on the web about method to generate normal variate (eg Marsaglia method, etc.).</li>
 </ul>
-    </div>
-    <footer class="content__footer"></footer>
+<h1 id="mark-standard-normal-distribution-mark"><mark> Standard Normal Distribution </mark></h1>
+
+We first define the standard normal random variable. We will then see that we can obtain other normal random variables by scaling and shifting a standard normal random variable. <br>
+A continuous random variable \(Z\) is said to be a standard normal (standard Gaussian) random variable, shown as \(Z∼N(0,1)\), if its PDF is given by
+$$
+f_Z(z) = \frac{1}{\sqrt{2\pi}}e^{-(\frac{z^2}{2})}, \ for\ all\ z\in\mathbb{R}
+$$
+
+<h1 id="mark-normal-distribution-mark-br"><mark> Normal Distribution </mark> <br></h1>
+
+
+If \(Z\) is a standard normal random variable and \(X=\sigma Z+\mu\), then \(X\) is a normal random variable with mean \(\mu\) and variance \(\sigma^2\) i.e,
+$$
+X ∼ N(\mu,\sigma^2)
+$$
+Conversely, if \(X∼N(\mu,\sigma^2)\), the random variable defined by \(Z=X−\mu\sigma\) is a standard normal random variable, i.e., \(Z∼N(0,1)\).
+
+<h1 id="mark-chi-square-distribution-mark"><mark> Chi-Square Distribution </mark></h1>
+
+
+The chi-square distribution results when ν independent variables with standard normal distributions are squared and summed. The degrees of freedom of the distribution is equal to the number of standard normal deviates being summed. The formula for the probability density function of the chi-square distribution is
+
+$$
+f(x) = \frac{e^{-\frac{x}{2}}x^{\frac{v}{2}-1}}{2^{\frac{v}{2}}\Gamma(\frac{v}{2})},\ for\ x \geq 0
+$$
+where \(ν\) is the shape parameter and \(\Gamma\) is the gamma function. The formula for the gamma function is
+$$
+\Gamma(a) = \int_0^{\infty}t^{a-1}e^{-t}dt
+$$
+
+<h1 id="mark-t-student-mark"><mark> T Student </mark></h1>
+<p>The T distribution (also called Student’s T Distribution) is a family of distributions that look almost identical to the normal distribution curve, only a bit shorter and fatter. The t distribution is used instead of the normal distribution when you have small samples. The larger the sample size, the more the t distribution looks like the normal distribution:
+$$
+T=\frac{\bar{X} - \mu}{\frac{S}{\sqrt{n}}}
+$$</p>
+<h1 id="mark-f-distribution-mark"><mark> F distribution </mark></h1>
+
+
+The F-distribution with \(d1\) and \(d2\) degrees of freedom is the distribution of
+$$
+X=\frac{S_1/d_1}{S_2/d_2}
+$$
+where \(S_{1}\) and \(S_{2}\) are independent random variables with chi-square distributions with respective degrees of freedom \(d_{1}\) and \(d_{2}\).
+
+<h1 id="mark-marsaglia-polar-method-mark"><mark> Marsaglia polar method </mark></h1>
+
+
+In computer science – in particular, in applications of the Monte Carlo method – the Marsaglia polar method is a method for generating a pair of independent standard normal random variables by choosing random points \((x, y)\) in the square \(−1 < x < 1, −1 < y < 1\)  until
+$$
+s =x^2 + y^2 < 1,
+$$
+and then returning the required pair of normal random variables as
+$$
+x\sqrt{\frac{-2ln(s)}{s}},y\sqrt{\frac{-2ln(s)}{s}}
+
+$$
+
+
+<h1 id="references">References</h1>
+<p>[1] probabilitycourse.com, &ldquo;Normal (Gaussian) Distribution&rdquo;, <a href="https://www.probabilitycourse.com/chapter4/4_2_3_normal.php">URL</a>, <br>
+[2] itl.nist.gov, &ldquo;Chi-Square Distribution&rdquo;, <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda3666.htm">URL</a>, <br>
+[3] onlinestatbook.com, &ldquo;Chi Square Distribution&rdquo;, <a href="https://onlinestatbook.com/2/chi_square/distribution.html#:~:text=Chi%20Square%20Distribution&amp;text=A%20standard%20normal%20deviate%20is,standard%20normal%20deviates%20being%20summed.">URL</a>, <br>
+[4] statisticshowto.com, &ldquo;What is the T Distribution?&rdquo;, <a href="https://www.statisticshowto.com/probability-and-statistics/t-distribution/">URL</a>, <br>
+[5] en.wikipedia.org, &ldquo;F-distribution&rdquo;, <a href="https://en.wikipedia.org/wiki/F-distribution">URL</a></p>
+    </header>
+
+    
 
             </section>
 
@@ -76,14 +144,6 @@
 </div>
                 <hr>
                 <div class="aside__content">
-    
-    
-        <p>
-            By Andrea Di Paolo, 
-            2022-11-24
-        </p>
-    
-
                 </div>
             </section>
 
